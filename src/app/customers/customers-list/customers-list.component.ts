@@ -3,6 +3,7 @@ import { NullTemplateVisitor } from '@angular/compiler';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { from } from 'rxjs';
 import { ICustomer } from '../../shared/interfaces';
+import { SorterService } from '../../core/sorter.service';
 
 @Component({
   selector: 'app-customers-list',
@@ -26,13 +27,13 @@ export class CustomersListComponent implements OnInit {
   customersOrderTotal: number;
   currencyCode: string = 'USD';
 
-  constructor() { }
+  constructor(private sorterService: SorterService) { }
 
   ngOnInit() {
 
   }
   sort(prop: string) {
-    //A sorter service will handle the sorting
+    this.sorterService.sort(this.filteredCustomers, prop);
   }
   calculateOrders() {
     this.customersOrderTotal = 0;
