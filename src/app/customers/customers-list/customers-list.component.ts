@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NullTemplateVisitor } from '@angular/compiler';
+import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
+import { from } from 'rxjs';
+import { ICustomer } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-customers-list',
@@ -8,10 +11,11 @@ import { NullTemplateVisitor } from '@angular/compiler';
 })
 export class CustomersListComponent implements OnInit {
 
-  filteredCustomers: any[]=[];
-  customerOrderTotal: number;
-  currencyCode: string='USD';
+  filteredCustomers: ICustomer[] = [];
   
+  customerOrderTotal: number;
+  currencyCode: string = 'USD';
+
   constructor() { }
 
   ngOnInit() {
