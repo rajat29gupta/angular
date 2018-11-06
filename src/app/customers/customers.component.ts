@@ -8,7 +8,11 @@ import { ICustomer } from '../shared/interfaces';
 })
 export class CustomersComponent implements OnInit {
   title: string;
+  isVisible = true;
   people: ICustomer[];
+  contVisiblity() {
+    this.isVisible = !this.isVisible;
+  }
   constructor() { }
 
   ngOnInit() {
