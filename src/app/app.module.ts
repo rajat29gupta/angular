@@ -8,20 +8,15 @@ import { AppComponent } from './app.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomersModule } from './customers/customers.module';
 import { SharedModule } from './shared/shared.module';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CustomersComponent,
-
+ 
+  imports: [BrowserModule,CoreModule,CustomersModule, OrdersModule, SharedModule,
+    AppRoutingModule],
+     declarations: [
+    AppComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    CustomersModule, SharedModule
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
