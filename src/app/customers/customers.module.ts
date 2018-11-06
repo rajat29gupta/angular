@@ -4,10 +4,11 @@ import { CommonModule, FormStyle } from '@angular/common';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { FilterTextboxComponent } from './customers-list/filter-textbox.componetnt';
 import { SharedModule } from '../shared/shared.module';
+import { CustomersRoutingModule } from './customer-routing.module';
 @NgModule({
   declarations: [CustomersListComponent,FilterTextboxComponent],
   imports: [
-    CommonModule,SharedModule,FormsModule
+    CommonModule,SharedModule,FormsModule,CustomersRoutingModule
   ],
   exports: [CustomersListComponent]
 })
